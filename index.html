@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internship Project - JavaScript Task 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain"></div>
+
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Internship Project • JavaScript Basics</p>
+      <h1>Interactive UI Playground</h1>
+      <p class="subtext">
+        This page demonstrates three core JavaScript tasks: dynamic button color change,
+        time-based greeting alert, and a basic two-number calculator.
+      </p>
+    </header>
+
+    <section class="card">
+      <h2>Task 2.1: Button Color Switch</h2>
+      <p>Click the button to cycle through attractive color states.</p>
+      <button id="colorButton" class="pill-btn" type="button">Click to Change Color</button>
+    </section>
+
+    <section class="card">
+      <h2>Task 2.2: Time-based Greeting</h2>
+      <p>A greeting alert appears automatically when this page loads.</p>
+      <button id="greetButton" class="ghost-btn" type="button">Show Greeting Again</button>
+    </section>
+
+    <section class="card calculator-card">
+      <h2>Task 2.3: Basic Calculator</h2>
+      <p>Enter two numbers and click Add to calculate the sum.</p>
+
+      <form id="calcForm" class="calc-form" action="#" method="post">
+        <label for="firstNumber" class="visually-hidden">First number</label>
+        <input id="firstNumber" name="firstNumber" type="number" step="any" placeholder="First number" required>
+
+        <label for="secondNumber" class="visually-hidden">Second number</label>
+        <input id="secondNumber" name="secondNumber" type="number" step="any" placeholder="Second number" required>
+
+        <button type="submit" class="pill-btn">Add Numbers</button>
+      </form>
+
+      <p id="result" class="result">Result: --</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

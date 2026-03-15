@@ -1,0 +1,192 @@
+:root {
+  --ink: #1a1b32;
+  --card: rgba(255, 255, 255, 0.86);
+  --line: rgba(26, 27, 50, 0.12);
+  --brand-1: #d946ef;
+  --brand-2: #fb7185;
+  --brand-3: #22d3ee;
+  --brand-4: #f59e0b;
+  --btn-text: #ffffff;
+  --shadow: 0 16px 40px rgba(10, 15, 40, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "DM Sans", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at 0% 0%, #ffd7f2 0%, transparent 42%),
+              radial-gradient(circle at 90% 15%, #d5f1ff 0%, transparent 35%),
+              linear-gradient(140deg, #fff7ec 0%, #eff2ff 100%);
+  position: relative;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.04) 0.6px, transparent 0.6px);
+  background-size: 3px 3px;
+  opacity: 0.18;
+}
+
+.page {
+  width: min(980px, 92%);
+  margin: 40px auto;
+  display: grid;
+  gap: 20px;
+}
+
+.hero {
+  background: var(--card);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.8s ease both;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: #7c3aed;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 1.12;
+}
+
+.subtext {
+  max-width: 65ch;
+  line-height: 1.7;
+  margin: 12px 0 0;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+  animation: slideUp 0.55s ease both;
+}
+
+.card:nth-of-type(2) {
+  animation-delay: 0.08s;
+}
+
+.card:nth-of-type(3) {
+  animation-delay: 0.16s;
+}
+
+.card h2 {
+  margin: 0 0 8px;
+  font-family: "Sora", sans-serif;
+  font-size: 1.25rem;
+}
+
+.card p {
+  margin: 0 0 14px;
+}
+
+.pill-btn,
+.ghost-btn {
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  padding: 11px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.pill-btn {
+  color: var(--btn-text);
+  background: linear-gradient(135deg, var(--brand-1), var(--brand-2));
+}
+
+.ghost-btn {
+  color: #5b21b6;
+  background: rgba(124, 58, 237, 0.11);
+  border: 1px solid rgba(124, 58, 237, 0.24);
+}
+
+.pill-btn:hover,
+.ghost-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+}
+
+.calc-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) auto;
+  gap: 10px;
+}
+
+.calc-form input {
+  border: 1px solid #c4c6e8;
+  border-radius: 12px;
+  padding: 11px 12px;
+  font: inherit;
+}
+
+.calc-form input:focus {
+  outline: 3px solid rgba(217, 70, 239, 0.2);
+  border-color: #d946ef;
+}
+
+.result {
+  margin-top: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 760px) {
+  .calc-form {
+    grid-template-columns: 1fr;
+  }
+}
